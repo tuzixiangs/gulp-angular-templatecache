@@ -12,7 +12,7 @@ describe('gulp-angular-templatecache', function () {
     stream.on('data', function (file) {
       assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
       assert.equal(file.relative, 'templates.js');
-      assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');\n$templateCache.put(\'/template-b.html\',\'<h1 id="template-b">I\\\'m template B!</h1>\');}]);');
+      assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');\n$templateCache.put(\'template-b.html\',\'<h1 id="template-b">I\\\'m template B!</h1>\');}]);');
       cb();
     });
 
@@ -40,7 +40,7 @@ describe('gulp-angular-templatecache', function () {
     stream.on('data', function (file) {
       assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
       assert.equal(file.relative, 'templates.js');
-      assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/views/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+      assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'views/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
       cb();
     });
 
@@ -59,7 +59,7 @@ describe('gulp-angular-templatecache', function () {
     stream.on('data', function (file) {
       assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
       assert.equal(file.relative, 'templates.js');
-      assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/directory/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+      assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'directory/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
       cb();
     });
 
@@ -92,7 +92,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/views/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'views/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -183,7 +183,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/tpl-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'tpl-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -233,7 +233,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -279,7 +279,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/foobar.js'));
         assert.equal(file.relative, 'foobar.js');
-        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/views/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'views/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -307,7 +307,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/views/test/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'views/test/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -332,7 +332,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/templates/all/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'templates/all/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -359,7 +359,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(file.path, path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), '\'use strict\'; module.exports = angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), '\'use strict\'; module.exports = angular.module(\'templates\', []).run([\'$templateCache\', function($templateCache) {$templateCache.put(\'template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -380,7 +380,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'define([\'angular\'], function(angular) { \'use strict\'; return angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);});');
+        assert.equal(file.contents.toString('utf8'), 'define([\'angular\'], function(angular) { \'use strict\'; return angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);});');
         cb();
       });
 
@@ -401,7 +401,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'import angular from \'angular\'; export default angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'import angular from \'angular\'; export default angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);');
         cb();
       });
 
@@ -422,7 +422,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), '(function(){\'use strict\';angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);})();');
+        assert.equal(file.contents.toString('utf8'), '(function(){\'use strict\';angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'template-a.html\',\'<h1 id="template-a">I\\\'m template A!</h1>\');}]);})();');
         cb();
       });
 
@@ -448,7 +448,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(file.path, path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'var template = "$templateCache.put(\'/template-a.html\',\'yoo\');";');
+        assert.equal(file.contents.toString('utf8'), 'var template = "$templateCache.put(\'template-a.html\',\'yoo\');";');
         cb();
       });
 
@@ -470,7 +470,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) { assert
         assert.equal(file.path, path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), '$templateCache.put(\'/template-a.html\',\'yoo\');');
+        assert.equal(file.contents.toString('utf8'), '$templateCache.put(\'template-a.html\',\'yoo\');');
         cb();
       });
 
@@ -494,7 +494,7 @@ describe('gulp-angular-templatecache', function () {
       stream.on('data', function (file) {
         assert.equal(file.path, path.normalize(__dirname + '/templates.js'));
         assert.equal(file.relative, 'templates.js');
-        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'/template-a.html\',\'yoo\');}]);');
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'template-a.html\',\'yoo\');}]);');
         cb();
       });
 
@@ -502,6 +502,81 @@ describe('gulp-angular-templatecache', function () {
         base: __dirname,
         path: __dirname + '/template-a.html',
         contents: Buffer.from('yoo')
+      }));
+
+      stream.end();
+    });
+
+  });
+
+  describe('Windows path compatibility', function () {
+
+    it('should handle Windows-style paths correctly', function (cb) {
+      var stream = templateCache();
+
+      stream.on('data', function (file) {
+        assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
+        assert.equal(file.relative, 'templates.js');
+        // Should generate relative path without leading slash, regardless of platform
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'subdir/template.html\',\'<div>Windows test</div>\');}]);');
+        cb();
+      });
+
+      // Simulate a file with Windows-style path separators
+      var winFile = new Vinyl({
+        base: __dirname,
+        path: __dirname + '/subdir/template.html',
+        contents: Buffer.from('<div>Windows test</div>')
+      });
+      
+      // Manually set the path with backslashes to simulate Windows behavior
+      if (process.platform === 'win32') {
+        winFile.path = winFile.path.replace(/\//g, '\\');
+      }
+
+      stream.write(winFile);
+      stream.end();
+    });
+
+    it('should use path.relative for consistent cross-platform behavior', function (cb) {
+      var stream = templateCache();
+
+      stream.on('data', function (file) {
+        assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
+        assert.equal(file.relative, 'templates.js');
+        // Verify that nested paths are handled correctly
+        var content = file.contents.toString('utf8');
+        assert(content.includes('$templateCache.put(\'deep/nested/template.html\''), 'Should contain relative path without leading slash');
+        assert(!content.includes('$templateCache.put(\'/deep/nested/template.html\''), 'Should not contain absolute path with leading slash');
+        cb();
+      });
+
+      stream.write(new Vinyl({
+        base: __dirname,
+        path: __dirname + '/deep/nested/template.html',
+        contents: Buffer.from('<div>Nested template</div>')
+      }));
+
+      stream.end();
+    });
+
+    it('should handle root option with Windows paths', function (cb) {
+      var stream = templateCache({
+        root: 'app/templates/'
+      });
+
+      stream.on('data', function (file) {
+        assert.equal(path.normalize(file.path), path.normalize(__dirname + '/templates.js'));
+        assert.equal(file.relative, 'templates.js');
+        // Should prepend root and use forward slashes
+        assert.equal(file.contents.toString('utf8'), 'angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {$templateCache.put(\'app/templates/template.html\',\'<div>Root test</div>\');}]);');
+        cb();
+      });
+
+      stream.write(new Vinyl({
+        base: __dirname,
+        path: __dirname + '/template.html',
+        contents: Buffer.from('<div>Root test</div>')
       }));
 
       stream.end();

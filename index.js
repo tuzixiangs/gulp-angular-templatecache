@@ -65,9 +65,24 @@ function templateCacheFiles(root, base, templateBody, transformUrl, escapeOption
      */
 
     if (typeof base === 'function') {
-      url = path.join(root, base(file));
+      const baseResult = base(file);
+      // Handle root paths that start with '/' to avoid absolute paths
+      if (root.startsWith('/')) {
+        url = (root.slice(1) + '/' + baseResult).replace(/\/+/g, '/');
+      } else {
+        url = path.join(root, baseResult);
+      }
     } else {
-      url = path.join(root, file.path.replace(base || file.base, ''));
+      // url = path.join(root, file.path.replace(base || file.base, ''));
+      const baseDir = base || file.base;
+      const relativePath = path.relative(baseDir, file.path);
+      // Handle root paths that start with '/' to avoid absolute paths
+      if (root.startsWith('/')) {
+        url = (root.slice(1) + '/' + relativePath).replace(/\/+/g, '/');
+      } else {
+        url = path.join(root, relativePath);
+      }
+      url = url.replace(/\\/g, '/');
     }
 
     if (root === '.' || root.indexOf('./') === 0) {
